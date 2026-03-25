@@ -1,13 +1,14 @@
 'use strict';
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
 
 function createWindow() {
+  Menu.setApplicationMenu(null);
+
   const win = new BrowserWindow({
     width: 420,
     height: 640,
     resizable: false,
-    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true

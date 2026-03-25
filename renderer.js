@@ -64,7 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     startStopBtn.textContent = 'Stop';
     startStopBtn.classList.remove('start');
     startStopBtn.classList.add('stop');
-    statusEl.textContent = `${vibeSelect.options[vibeSelect.selectedIndex].text} — Running`;
+    const vibeText = vibeSelect.options[vibeSelect.selectedIndex].text;
+    statusEl.textContent = `${vibeText} — Running`;
+    document.title = `Vibe Timer – ${vibeText} Running`;
     vibeSelect.disabled = true;
   }
 
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startStopBtn.classList.remove('stop');
     startStopBtn.classList.add('start');
     statusEl.textContent = 'Ready';
+    document.title = 'Vibe Timer';
     vibeSelect.disabled = false;
   }
 
